@@ -3,6 +3,8 @@ import Link from "next/link";
 const navItems = [
   { href: "/", label: "Overview" },
   { href: "/tokens", label: "Tokens" },
+  { href: "/layouts", label: "Layouts" },
+  { href: "/primitives", label: "Primitives" },
   { href: "/process", label: "Process" },
   { href: "/status", label: "Status" },
 ];
@@ -13,7 +15,7 @@ export function SiteHeader() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="type-meta text-[var(--accent-strong)]">
-            Phase 1 Token Baseline
+            Phase 1 Layout Baseline
           </p>
           <Link href="/" className="mt-1 block type-concept text-[var(--ink-strong)]">
             Educational Design System

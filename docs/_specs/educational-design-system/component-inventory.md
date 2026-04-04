@@ -55,6 +55,18 @@ For phase 1, the primitives in this file are render targets. Authors and agents 
 
 These block contracts are the bridge between the content schema and the component layer. If a page cannot be expressed through this block set, either the recipe is wrong or the system needs a new block type and primitive pair.
 
+## Render-contract boundary
+
+The content schema owns serialized block payloads. The component props in this inventory describe runtime component APIs, not the exact shape stored inside `UnitDraft` or `UnitVersion` artifacts.
+
+Sprint 3 should follow these rules:
+
+1. Unit artifacts use named content fields such as `body`, `summary`, `prompt`, `items`, and `visualRef`.
+2. React-only props such as `children`, `primary`, `secondary`, and `media` should be derived by the renderer rather than stored directly in unit artifacts.
+3. Shared payload sub-shapes such as actions, metadata, source links, and reading-map links should be normalized once and reused across block types.
+4. Blocks that may appear in local navigation or direct links should carry stable `id` values rather than deriving anchors from headings at render time.
+5. The block renderer should stay a pure mapping layer from `BlockSpec` payloads to primitive props, with no page-specific branching.
+
 ## Layout primitives
 
 ### `PageShell`

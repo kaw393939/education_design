@@ -4,7 +4,7 @@
 
 This repository defines a documentation-first educational design system and publishing workflow.
 
-The intended product is a static-first educational site system built from reusable research-driven content units, approved visuals, experience configs, and release manifests. The repo now has an executable Next.js scaffold, but it is still early in the implementation stage.
+The intended product is a static-first educational site system built from reusable research-driven content units, approved visuals, experience configs, and release manifests. The repo now has an executable Next.js scaffold with approved token, layout, and pedagogical baselines, but it is still early in the implementation stage.
 
 If you are an LLM entering this repository for the first time, treat this file as the entrypoint and process contract.
 
@@ -16,8 +16,10 @@ As of 2026-04-04, this repository contains:
 - active sprint briefs
 - active QA structure and seeded planning QA artifacts
 - a committed package manifest and installable dependency graph
-- a Next.js static-export scaffold with overview, process, and status routes
+- a Next.js static-export app with overview, process, status, token, layout-guide, primitives-guide, and example routes
 - a Sprint 1 token implementation with a dedicated `/tokens` documentation route
+- a Sprint 2 shared shell and layout primitive implementation with a dedicated `/layouts` guide and proof pages under `/examples/`
+- a Sprint 3 pedagogical primitive implementation with a dedicated `/primitives` guide and unit-driven concept, assignment, and reading-map examples
 - a committed Lighthouse CI configuration and runnable QA scripts
 - GitHub Actions workflows for automated quality checks and Pages deployment
 - root-path and GitHub Pages-style base-path QA coverage
@@ -27,7 +29,7 @@ As of 2026-04-04, this repository does not yet contain:
 
 - release QA artifacts
 - the release-manifest-driven content workflow implementation
-- the later educational primitives and content assembly layers beyond the phase-1 token baseline
+- recipe-driven exemplar pages and content assembly layers beyond the Sprint 3 primitive baseline
 
 Do not pretend those implementation pieces already exist. If they do not exist in the filesystem, they are not done.
 
@@ -120,6 +122,30 @@ The current Sprint 1 implementation artifact is:
 
 That artifact is now approved and records the evidence-backed Sprint 1 token implementation pass.
 
+The current Sprint 2 planning artifact is:
+
+- `docs/_qa/planning/sprints/sprint-2-layout-primitives.planning-qa.md`
+
+That artifact is approved and records the planning review for the shared shell and layout primitive layer.
+
+The current Sprint 3 planning artifact is:
+
+- `docs/_qa/planning/sprints/sprint-3-educational-primitives.planning-qa.md`
+
+That artifact is approved and records the planning review for the pedagogical primitive layer and unit-driven render contracts.
+
+The current Sprint 2 implementation artifact is:
+
+- `docs/_qa/implementation/sprints/sprint-2-layout-primitives.implementation-qa.md`
+
+That artifact is approved and records the evidence-backed Sprint 2 layout implementation pass.
+
+The current Sprint 3 implementation artifact is:
+
+- `docs/_qa/implementation/sprints/sprint-3-educational-primitives.implementation-qa.md`
+
+That artifact is approved and records the evidence-backed Sprint 3 pedagogical primitive and unit-renderer implementation pass.
+
 Local secrets must live in `.env.local` or another ignored env file. Do not commit `.env` files containing real credentials.
 
 ## Deterministic Lighthouse rule
@@ -167,10 +193,16 @@ Completed:
 - GitHub Actions quality and Pages deployment workflows
 - validated typecheck, lint, unit test, browser test, and Lighthouse pass after the Sprint 1 token and workflow changes
 - validated the same browser and Lighthouse checks in GitHub Pages-style base-path mode
+- Sprint 2 shared page shells and layout primitives
+- `/layouts`, `/examples/module`, `/examples/lesson`, and `/examples/reading-map` proof routes assembled from the shared layout layer
+- validated typecheck, lint, unit test, browser test, and Lighthouse pass after the Sprint 2 layout changes in both root-path and GitHub Pages-style base-path modes
+- Sprint 3 educational primitives and normalized render-contract types
+- `/primitives` guide route with concept, assignment, and reading-map units rendered from structured block payloads
+- validated typecheck, lint, unit test, browser test, and Lighthouse pass after the Sprint 3 primitive and renderer changes in both root-path and GitHub Pages-style base-path modes
 
 Not completed:
 
-- component and page implementation
+- Sprint 4 recipe proof and exemplar pages assembled from approved unit configs
 - release-manifest-driven content workflow implementation
 - release manifests and publish pipeline
 
@@ -185,4 +217,4 @@ Not completed:
 
 ## Immediate next implementation direction
 
-The next practical implementation step is to begin Sprint 2 layout primitives on top of the now-approved token layer and automated quality baseline.
+The next practical implementation step is to begin Sprint 4 page recipes and exemplar-page proof on top of the now-approved token, layout, and pedagogical baselines.

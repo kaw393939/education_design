@@ -148,30 +148,169 @@ Every block must include:
 
 - `type`
 
+Recommended shared rules:
+
+- use named serializable content fields rather than React-only props
+- include stable `id` values on blocks that may be linked from local navigation or direct anchors
+- reuse shared sub-shapes for actions, metadata, media references, and link lists rather than inventing one-off variants per block
+
 Block payloads then vary by type.
+
+### Shared render-contract sub-shapes
+
+Use these normalized shapes when defining phase-1 block payloads.
+
+#### `ActionLinkSpec`
+
+Required fields:
+
+- `label`
+- `href`
+
+Optional fields:
+
+- `kind`
+- `note`
+
+#### `MetadataItemSpec`
+
+Required fields:
+
+- `label`
+- `value`
+
+#### `GridItemSpec`
+
+Required fields:
+
+- `title`
+- `summary`
+
+Optional fields:
+
+- `href`
+- `tag`
+
+#### `ComparisonColumnSpec`
+
+Required fields:
+
+- `key`
+- `label`
+
+#### `ComparisonRowSpec`
+
+Required fields:
+
+- `label`
+- `cells`
+
+#### `SequenceItemSpec`
+
+Required fields:
+
+- `label`
+- `title`
+- `summary`
+
+Optional fields:
+
+- `href`
+- `visualRef`
+
+#### `WorkedExampleStepSpec`
+
+Required fields:
+
+- `title`
+- `body`
+
+Optional fields:
+
+- `outcome`
+
+#### `SourceItemSpec`
+
+Required fields:
+
+- `title`
+- `description`
+- `href`
+- `type`
+
+Optional fields:
+
+- `note`
+
+#### `ReadingMapLinkSpec`
+
+Required fields:
+
+- `label`
+- `href`
+
+Optional fields:
+
+- `note`
+- `type`
+
+#### `ReadingMapClusterSpec`
+
+Required fields:
+
+- `title`
+- `summary`
+- `links`
+
+#### `GlossaryTermSpec`
+
+Required fields:
+
+- `term`
+- `definition`
+
+Optional fields:
+
+- `note`
+
+#### `VisualReferenceSpec`
+
+Required fields:
+
+- `visualRef`
+
+Optional fields:
+
+- `caption`
+- `credit`
+- `alt`
+
+Markdown-bearing fields such as `body`, `summary`, `stakes`, `prompt`, `takeaway`, `context`, and `note` should be stored as Markdown strings that the renderer can pass into the appropriate primitive.
 
 ### Phase-1 block union
 
-| Block type | Renders through | Minimum payload |
-| --- | --- | --- |
-| `hero` | `LessonHero` | `title`, `dek` |
-| `whyItMatters` | `WhyItMatters` | `summary`, `stakes` |
-| `section` | `SectionBlock` | `title`, `body` |
-| `conceptGrid` | `ConceptGrid` | `items[]` |
-| `summaryGrid` | `SummaryGrid` | `items[]` |
-| `comparisonGrid` | `ComparisonGrid` | `columns`, `rows` |
-| `sequenceTimeline` | `SequenceTimeline` | `mode`, `items[]` |
-| `workedExample` | `WorkedExample` | `prompt`, `steps[]` |
-| `editorialAside` | `EditorialAside` | `body` |
-| `pullInsight` | `PullInsight` | `quote` |
-| `visualBreak` | `VisualBreak` | `title` or `body` or `visualRef` |
-| `reflectionPrompt` | `ReflectionPrompt` | `prompt` |
-| `nextStep` | `NextStepBlock` | `title`, `primaryAction` |
-| `sourceAnchorGrid` | `SourceAnchorGrid` | `items[]` |
-| `glossary` | `GlossaryBlock` | `terms[]` |
-| `readingMapGrid` | `ReadingMapGrid` | `clusters[]` |
+| Block type | Renders through | Required payload | Common optional fields |
+| --- | --- | --- | --- |
+| `hero` | `LessonHero` | `title`, `dek` | `eyebrow`, `metadata[]`, `progress`, `actions[]`, `visualRef` |
+| `whyItMatters` | `WhyItMatters` | `summary`, `stakes` | `title`, `audience`, `links[]` |
+| `section` | `SectionBlock` | `id`, `title`, `body` | `eyebrow`, `summary`, `tone` |
+| `conceptGrid` | `ConceptGrid` | `items[]` | `id`, `title`, `summary`, `columns` |
+| `summaryGrid` | `SummaryGrid` | `items[]` | `id`, `title` |
+| `comparisonGrid` | `ComparisonGrid` | `columns[]`, `rows[]` | `id`, `title`, `legend`, `caption` |
+| `sequenceTimeline` | `SequenceTimeline` | `mode`, `items[]` | `id`, `title`, `summary` |
+| `workedExample` | `WorkedExample` | `prompt`, `steps[]` | `id`, `title`, `result`, `reflection`, `visualRef` |
+| `editorialAside` | `EditorialAside` | `body` | `id`, `title`, `tone`, `icon` |
+| `pullInsight` | `PullInsight` | `quote` | `attribution`, `context` |
+| `visualBreak` | `VisualBreak` | at least one of `title`, `body`, `visualRef` | `id`, `tone`, `caption`, `credit`, `alt` |
+| `reflectionPrompt` | `ReflectionPrompt` | `prompt` | `id`, `title`, `questions[]`, `mode`, `timeEstimate` |
+| `nextStep` | `NextStepBlock` | `title`, `primaryAction` | `summary`, `secondaryAction`, `context` |
+| `sourceAnchorGrid` | `SourceAnchorGrid` | `items[]` | `id`, `title`, `summary` |
+| `glossary` | `GlossaryBlock` | `terms[]` | `id`, `title`, `layout` |
+| `readingMapGrid` | `ReadingMapGrid` | `clusters[]` | `id`, `title`, `progression` |
 
 Block order matters because recipes validate sequence as well as presence.
+
+When a block can appear in local navigation or section-level deep links, treat `id` as required in practice even if the page recipe does not mention it explicitly.
 
 ### `VisualDraft`
 

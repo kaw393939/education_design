@@ -173,7 +173,7 @@ A useful principle you implicitly share with high-performing brands is the Disne
 The point of this table is not “who did it first,” but what each exemplar contributes—and what your system adds by integrating them.
 
 | Analog system / exemplar | What they systematize | Primary strength | Typical weakness / gap vs your system |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Apple / entity["people","Steve Jobs","Apple co-founder"] | Coherence across product, messaging, experience | Constraint-driven clarity; brand “inevitability” | Less explicit about underlying persuasion science; often implicit |
 | entity["people","David Ogilvy","advertising pioneer"] | Direct-response discipline; every element has a job | Clarity + evidence-led selling | Less emphasis on identity formation and motivation psychology as a system |
 | entity["organization","The Walt Disney Company","entertainment company"] / Disney Institute pattern | End-to-end experience as narrative | “Everything speaks” coherence | Not designed as a portable personal-brand career OS |
@@ -261,7 +261,7 @@ graph LR
 This table assumes “one primary archetype” and is meant to guide consistent design decisions. Archetype concepts are drawn from brand-archetype practice literature, while needs and persuasion map to Maslow and Cialdini frameworks. citeturn1search5turn0search4turn0search5  
 
 | Primary archetype | Primary need-pull (needs map) | Design primitives (what to standardize) | Persuasion emphasis (embedded, not bolted) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Sage | competence, clarity, meaning (esteem/cognitive growth) | grid, strong hierarchy, restrained palette, “proof blocks,” precise typography | authority + consistency; show method and receipts |
 | Explorer | autonomy, discovery, expansion (growth/self-direction) | journey metaphors, open loops, bold headlines, “map” layouts, dynamic imagery | curiosity + commitment; invite small experiments |
 | Magician | transformation, possibility (self-actualization) | before/after visuals, “system diagrams,” transformation language, contrast | reciprocity + social proof; “here’s what changes” |
@@ -276,7 +276,8 @@ This table assumes “one primary archetype” and is meant to guide consistent 
 
 These are the enforceable rules that prevent the system from turning into a set of disconnected tactics.
 
-**Invariants (non-negotiable)**  
+#### Invariants
+
 Your system works best when these remain true:
 
 - One primary archetype governs voice + visuals + proof selection.  
@@ -284,7 +285,7 @@ Your system works best when these remain true:
 - Proof-of-work is concrete and verifiable (artifact > claim).  
 - Deployment is continuous: publish + show up + follow up (weak ties compound). citeturn5search3turn9search0turn5search2  
 
-**Forbidden states (system breaks here)**
+#### Forbidden states
 
 - Mixed archetypes with no hierarchy (“identity blur”).  
 - Face/novelty imagery without semantic connection to the promise (attention without meaning).  
@@ -292,10 +293,10 @@ Your system works best when these remain true:
 - Portfolio not tied to a narrative and a call-to-action (artifact without conversion path).  
 - Distribution avoided (“I built it, now I wait”).
 
-**Evaluation rubric (student or user scoring)**
+#### Evaluation rubric
 
 | Dimension | What “good” looks like | How to score |
-|---|---|---|
+| --- | --- | --- |
 | Coherence | archetype is obvious from 5 seconds of scanning | 1–5 |
 | Clarity | value prop is understood in one sentence | 1–5 |
 | Proof | artifacts demonstrate capability, not vibes | 1–5 |
@@ -318,7 +319,7 @@ The MVP sequence you proposed is consistent with a low-risk path: demonstrate th
 
 #### MVP website: the teaching + demonstration artifact
 
-**Five-step guided flow (user-facing)**
+##### Five-step guided flow
 
 1. **Choose a primary archetype** (with constraint checks; optional secondary trait).  
 2. **Map to needs** (what human need you serve; what promise you make).  
@@ -332,7 +333,7 @@ This flow operationalizes identity → proof → distribution using repeatable o
 
 To productize as an agent, your differentiator is enforcement (design-system logic), not chatting.
 
-**Agent behavior requirements (research-aligned)**
+##### Agent behavior requirements
 
 - **Constraint satisfaction:** reject or flag archetype-incongruent choices (“this visual tone conflicts with your archetype”).  
 - **Structured generation:** produce artifacts in consistent templates (design-system approach). citeturn7search0turn7search1  
@@ -342,7 +343,7 @@ To productize as an agent, your differentiator is enforcement (design-system log
 
 #### Metrics: what to measure to prove value
 
-**Product success metrics**
+##### Product success metrics
 
 - Flow completion rate (Step 1→5)  
 - Coherence score improvement (rubric before/after)  
@@ -350,7 +351,7 @@ To productize as an agent, your differentiator is enforcement (design-system log
 - Publishing cadence (articles/posts per month)  
 - Opportunity signals (inbound messages, interviews, paid calls, talk invites)
 
-**UX/attention metrics (tie back to your face hypothesis)**
+##### UX/attention metrics
 
 - Time-to-first-click on CTA  
 - Scroll depth  

@@ -26,7 +26,7 @@ The workflow should support repeated review and resolution cycles while preservi
 
 ## Unit workflow
 
-### Lifecycle
+### Unit lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -41,7 +41,7 @@ stateDiagram-v2
   published --> retired
 ```
 
-### State meanings
+### Unit state meanings
 
 - `idea`: a unit concept exists but no draft artifact has been created.
 - `working_draft`: a mutable authoring file exists and can still be edited.
@@ -60,7 +60,7 @@ Once a unit becomes `frozen_candidate`, it must never be edited in place. Any ch
 
 ## Visual workflow
 
-### Lifecycle
+### Visual lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -76,7 +76,7 @@ stateDiagram-v2
   published --> retired
 ```
 
-### State meanings
+### Visual state meanings
 
 - `idea`: a visual need has been identified.
 - `working_draft`: a mutable visual spec draft exists.
@@ -90,7 +90,7 @@ stateDiagram-v2
 
 ## Release workflow
 
-### Lifecycle
+### Release lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -103,7 +103,7 @@ stateDiagram-v2
   published --> superseded
 ```
 
-### State meanings
+### Release state meanings
 
 - `assembled`: a candidate release manifest exists.
 - `review_requested`: the candidate manifest is under review.

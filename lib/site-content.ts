@@ -30,11 +30,16 @@ export const completedItems = [
   "Sprint 1 semantic token system and documentation route",
   "GitHub Actions quality and Pages deployment workflows",
   "Validated local quality pass after Sprint 1 token and routing changes",
+  "Sprint 2 layout primitives and shared page shells",
+  "Layout guide plus module, lesson, and reading-map proof routes",
+  "Validated root-path and GitHub Pages-style base-path QA after Sprint 2 layout changes",
+  "Sprint 3 educational primitives and normalized render-contract types",
+  "Unit-driven renderer plus the /primitives guide route",
+  "Concept, assignment, and reading-map block examples rendered from structured unit payloads",
 ];
 
 export const pendingItems = [
-  "Educational component primitives",
-  "Sprint 2 layout primitives",
+  "Sprint 4 recipe proof from approved unit configs",
   "Release-manifest-driven site build",
   "Approved content and visual version flow",
   "Release QA artifacts tied to real release manifests",
@@ -58,7 +63,7 @@ export const topLevelCards = [
   {
     title: "System",
     description:
-      "A static-first educational site baseline derived from the strongest instructional patterns in the reference museum project.",
+      "A static-first educational site baseline with token, layout, and pedagogical layers derived from the strongest instructional patterns in the reference museum project.",
   },
   {
     title: "Process",

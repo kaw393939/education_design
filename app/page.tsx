@@ -1,137 +1,148 @@
 import Link from "next/link";
 
-import { PagePreviewCard } from "@/components/page-preview-card";
-import { EditorialLayout } from "@/components/editorial-layout";
+import { CalloutBand } from "@/components/callout-band";
+import { ContentGrid } from "@/components/content-grid";
+import { EditorialBand } from "@/components/editorial-band";
 import { SectionHeading } from "@/components/section-heading";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { PageShell } from "@/components/page-shell";
+import { ProseBlock } from "@/components/prose-block";
+import { SplitLayout } from "@/components/split-layout";
 import { TonePanel } from "@/components/tone-panel";
+import { examplePageCards } from "@/lib/layout-primitives-content";
 import { completedItems, operatingLoop, qualityBars, topLevelCards } from "@/lib/site-content";
-import { pageTypeExamples } from "@/lib/theme-tokens";
 
 export default function HomePage() {
   return (
-    <EditorialLayout>
-      <SiteHeader />
+    <PageShell>
+      <EditorialBand tone="emphasis" paddingScale="hero">
+        <div className="grid gap-6 lg:grid-cols-[1.4fr_0.9fr] lg:items-end">
+          <div className="measure-wide">
+            <p className="type-meta text-[var(--accent-strong)]">
+              Sprint 3 Educational Primitives
+            </p>
+            <h1 className="type-hero measure-hero mt-4 text-balance text-[var(--ink-strong)]">
+              Documentation, QA, render contracts, and educational primitives now share one system.
+            </h1>
+            <ProseBlock lead className="mt-6">
+              <p>
+                The app is no longer proving itself only with shell-level layout. Sprint 3 adds the pedagogical layer:
+                unit-driven blocks now map into reusable heroes, sections, comparisons, examples, summaries,
+                reading maps, and next-step components through one shared renderer.
+              </p>
+            </ProseBlock>
+          </div>
 
-      <TonePanel tone="emphasis" className="grid gap-6 p-8 lg:grid-cols-[1.4fr_0.9fr] lg:items-end lg:p-12">
-        <div className="measure-wide">
-          <p className="type-meta text-[var(--accent-strong)]">
-            Executable Phase 1 Baseline
-          </p>
-          <h1 className="type-hero measure-hero mt-4 text-balance text-[var(--ink-strong)]">
-            Documentation, QA, and static export now share one runnable project.
-          </h1>
-          <p className="type-body measure-reading mt-6 text-[var(--ink-body)] sm:text-[1.125rem]">
-            This scaffold is the bridge between the active spec set and the first real implementation work.
-            It keeps the repo static-first, gives Playwright and Lighthouse an exported artifact to audit, and
-            makes the process visible enough that another maintainer or LLM can continue without guesswork.
-          </p>
+          <CalloutBand label="Current focus" title="The educational layer is now explicit." tone="next">
+            <ul className="space-y-2 pl-5">
+              <li>Structured block payloads now map into first-class educational primitives.</li>
+              <li>Shared sub-shapes keep actions, metadata, and source links from drifting across components.</li>
+              <li>The new primitives guide proves concept, assignment, and reading-map units render from one contract.</li>
+              <li>Exported-site QA still gates the result in both root-path and Pages-style base-path modes.</li>
+            </ul>
+          </CalloutBand>
         </div>
+      </EditorialBand>
 
-        <div className="card-shell rounded-[var(--radius-card)] border border-[var(--border-strong)] bg-[color:rgba(255,255,255,0.62)] p-6">
-          <p className="type-meta text-[var(--signal)]">Current focus</p>
-          <ul className="mt-4 space-y-3 type-caption text-[var(--ink-body)]">
-            <li>Static export with base-path-safe Next.js configuration.</li>
-            <li>Committed Lighthouse CI config against exported output.</li>
-            <li>Semantic token system covering reading, proof, reflection, and next-step states.</li>
-            <li>GitHub Actions workflows for automated quality checks and Pages deploy.</li>
-          </ul>
-        </div>
-      </TonePanel>
-
-      <section className="grid gap-4 md:grid-cols-3">
+      <ContentGrid minCardWidth="17rem">
         {topLevelCards.map((card) => (
           <TonePanel key={card.title} tone="neutral" className="card-shell p-6">
             <h2 className="type-concept text-[var(--ink-strong)]">{card.title}</h2>
             <p className="type-body mt-3 text-[var(--ink-body)]">{card.description}</p>
           </TonePanel>
         ))}
-      </section>
+      </ContentGrid>
 
       <section className="space-y-6">
         <SectionHeading
-          eyebrow="Token Proof"
-          title="Three page jobs, one semantic visual system."
-          body="Sprint 1 is now live in the scaffold: the same token layer can style lesson pages, module overviews, and reading maps without falling back to page-specific decoration."
+          eyebrow="Proof Routes"
+          title="Layout proof pages remain, and the new primitives guide adds unit-driven rendering proof."
+          body="The route set now proves both structural reuse and pedagogical reuse: the shell system still carries page layout, while the primitives guide renders structured units through the new content layer." 
         />
-        <div className="grid gap-4 lg:grid-cols-3">
-          {pageTypeExamples.map((page) => (
-            <PagePreviewCard
-              key={page.title}
-              title={page.title}
-              purpose={page.purpose}
-              sections={page.sections}
-              tone={page.tone}
-            />
+        <ContentGrid minCardWidth="18rem">
+          {examplePageCards.map((page) => (
+            <TonePanel key={page.title} tone={page.tone} className="card-shell p-6">
+              <p className="type-meta text-[var(--accent-strong)]">Layout proof page</p>
+              <h2 className="mt-3 type-concept text-[var(--ink-strong)]">{page.title}</h2>
+              <p className="mt-3 type-body text-[var(--ink-body)]">{page.summary}</p>
+              <Link href={page.href} className="action-secondary mt-5 w-fit">
+                Open example
+              </Link>
+            </TonePanel>
           ))}
-        </div>
-      </section>
-
-      <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <TonePanel tone="neutral" className="p-8">
-          <SectionHeading
-            eyebrow="Operating Loop"
-            title="The process is part of the product baseline."
-            body="Implementation is only valid when it leaves behind the review trail the specs require. The files define what is done, what is approved, and what still needs work."
-          />
-          <ol className="mt-8 space-y-4 type-body text-[var(--ink-body)]">
-            {operatingLoop.map((step) => (
-              <li key={step} className="rounded-[var(--radius-card)] border border-[var(--border-neutral)] bg-[var(--surface-reading)] px-4 py-3">
-                {step}
-              </li>
-            ))}
-          </ol>
-        </TonePanel>
-
-        <TonePanel tone="proof" className="p-8">
-          <SectionHeading
-            eyebrow="Quality Gates"
-            title="Exported output is the thing we trust."
-            body="The dev server is useful for iteration, but it is not the artifact we publish. Verification is anchored to the exported site so the build path and the QA path stay aligned."
-          />
-          <ul className="mt-8 space-y-3 type-body text-[var(--ink-body)]">
-            {qualityBars.map((item) => (
-              <li key={item} className="rounded-[var(--radius-card)] border border-[var(--border-proof)] bg-[color:rgba(255,255,255,0.65)] px-4 py-3">
-                {item}
-              </li>
-            ))}
-          </ul>
+        </ContentGrid>
+        <TonePanel tone="proof" className="p-6">
+          <p className="type-meta text-[var(--accent-strong)]">New guide route</p>
+          <h2 className="mt-3 type-concept text-[var(--ink-strong)]">Primitives guide</h2>
+          <p className="mt-3 type-body text-[var(--ink-body)]">
+            The new guide shows the shared contract layer, then renders concept, assignment, and reading-map units from
+            ordered block arrays instead of hand-composed page files.
+          </p>
+          <Link href="/primitives" className="action-secondary mt-5 w-fit">
+            Open primitives guide
+          </Link>
         </TonePanel>
       </section>
 
-      <TonePanel tone="reading" className="grid gap-8 p-8 lg:grid-cols-[1fr_auto] lg:items-end">
-        <div>
-          <SectionHeading
-            eyebrow="Completed Now"
-            title="The repo has moved past pure planning."
-            body="The scaffold is intentionally narrow, but it is enough to start implementation under real build, test, and exported-site QA conditions."
-          />
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {completedItems.map((item) => (
-              <li
-                key={item}
-                className="rounded-[var(--radius-card)] border border-[var(--border-neutral)] bg-[color:rgba(255,255,255,0.72)] px-4 py-3 type-caption text-[var(--ink-body)]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/tokens" className="action-primary">
-            Review token system
-          </Link>
-          <Link href="/process" className="action-secondary">
-            Review the process
-          </Link>
-          <Link href="/status" className="action-secondary">
-            See status snapshot
-          </Link>
-        </div>
-      </TonePanel>
+      <SplitLayout
+        ratio="feature"
+        primary={
+          <CalloutBand label="Operating Loop" title="The process is part of the product baseline." tone="neutral">
+            <ol className="space-y-3 pl-5">
+              {operatingLoop.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+          </CalloutBand>
+        }
+        secondary={
+          <CalloutBand label="Quality Gates" title="Exported output is still the thing we trust." tone="proof">
+            <ul className="space-y-3 pl-5">
+              {qualityBars.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <Link href="/primitives" className="action-secondary mt-5 w-fit">
+              Review educational primitives
+            </Link>
+          </CalloutBand>
+        }
+      />
 
-      <SiteFooter />
-    </EditorialLayout>
+      <section className="space-y-6">
+        <SectionHeading
+          eyebrow="Completed Now"
+          title="The repo has moved from shell proof into unit-driven pedagogical proof."
+          body="Sprint 3 adds the contract types, block renderer, and educational primitives that sit on top of the shell system while keeping the validation path rooted in exported output." 
+        />
+        <SplitLayout
+          ratio="feature"
+          primary={
+            <ContentGrid minCardWidth="15rem">
+              {completedItems.map((item) => (
+                <TonePanel key={item} tone="reading" className="card-shell p-5">
+                  <p className="type-caption text-[var(--ink-body)]">{item}</p>
+                </TonePanel>
+              ))}
+            </ContentGrid>
+          }
+          secondary={
+            <TonePanel tone="next" className="p-6">
+              <p className="type-meta text-[var(--signal)]">Next routes to review</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link href="/primitives" className="action-primary">
+                  Primitives guide
+                </Link>
+                <Link href="/layouts" className="action-primary">
+                  Layout guide
+                </Link>
+                <Link href="/examples/lesson" className="action-secondary">
+                  Lesson example
+                </Link>
+              </div>
+            </TonePanel>
+          }
+        />
+      </section>
+    </PageShell>
   );
 }

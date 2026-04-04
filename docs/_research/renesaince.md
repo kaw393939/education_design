@@ -69,7 +69,7 @@ timeline
 ### Table: historical parallels that justify the program thesis
 
 | Dimension | Print-era shift | AI-era shift | Consequence for education |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Cost curve | Copying texts becomes cheap relative to scribal labor citeturn25view1 | Producing drafts/code/analysis becomes cheap relative to human time citeturn14search7 | Schools can’t compete by “delivering information”; must certify judgment + practice |
 | Access | Wider access to scripture, classics, references citeturn28view1 | Wider access to high-level cognitive assistance (tutoring, synthesis) citeturn10view1turn14search7 | More learners can attempt advanced production earlier |
 | Authority | Competing interpretations weaken centralized control (Reformation) citeturn19view0turn29view0 | DIY learning + AI tools challenge credential gatekeeping citeturn15search3turn15search2 | Degrees must prove competence, not time-in-seat |
@@ -101,7 +101,7 @@ The distinguishing feature is **end-to-end ownership**: these roles are responsi
 The following examples are recent, publicly posted descriptions that illustrate the skill bundle your program must produce.
 
 | Example role | Core responsibilities emphasized | Competency implications |
-|---|---|---|
+| --- | --- | --- |
 | entity["company","Palantir Technologies","software company"] Forward Deployed AI Engineer | Own “Gen AI strategy and implementation” with customers; build “end-to-end workflows,” take them to production; collaborate with technical and non-technical stakeholders; strong ML basics and strong coding (Python/TS/Java/etc.). citeturn12view0 | Applied LLM workflow building; stakeholder discovery; production engineering; ML evaluation + decomposition; communication |
 | entity["company","Databricks","data and ai company"] AI Engineer – FDE | Customer-facing delivery; build and productionize GenAI apps; experience with RAG, multi-agent systems, Text2SQL, fine-tuning; deploy production-grade GenAI including evaluation and optimizations; cloud deployment; communicate/teach across audiences. citeturn12view1 | RAG + agent systems; LLMOps; evaluation harnesses; cloud architecture; teaching/consulting communication |
 | entity["company","Anthropic","ai safety company"] Forward Deployed Engineer, Applied AI | Embed with strategic customers; ship production apps; deliver artifacts like MCP servers, sub-agents, agent skills; evaluation frameworks; operate autonomously under ambiguity; strong customer discovery and communication. citeturn13view0 | Agentic systems; deployment patterns; autonomy; rigorous communication; reusable tooling mindset |
@@ -172,7 +172,7 @@ xychart-beta
 ### Table: student deficits versus program interventions
 
 | Incoming challenge | Evidence signal | Likely impact on AI engineering learning | Program intervention |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Reading comprehension gaps | NAEP grade 12 reading at/above Proficient 37% (2019) citeturn9view0; ACT reading benchmark met 39% (2025) citeturn8view1 | Misreading specs; brittle reasoning; weak documentation | Structured reading/writing studio; Ordo guided annotation + summarization; vocabulary expansion; technical writing rubrics |
 | Fragmented attention | 46% of teens online “almost constantly” citeturn26view2 | Shallow practice; slow debugging skill; weak deep-work tolerance | Attention scaffolds: time-boxing, focus protocols, “single-problem deep dives,” device-aware policies; Ordo as guided practice environment |
 | Mental health distress | CDC reports high prevalence of sadness/hopelessness and suicidal ideation citeturn6view1 | Dropout risk; diminished working memory and persistence | Embedded support: counseling referral pathways, coaching, belonging/community design; workload pacing with early wins |
@@ -254,7 +254,7 @@ flowchart TD
 ### Table: curriculum modules mapped to market competencies
 
 | Market competency cluster (from postings) | Evidence in postings | Curriculum module(s) that teach it | Mastery evidence (assessment artifacts) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RAG + retrieval pipelines | Emphasized in Databricks and SF roles citeturn12view1turn12view2; emphasized in Tome role citeturn12view3 | LLM Application Engineering; Data+ML Fundamentals | RAG service with eval report; hallucination/error analysis; retrieval quality metrics |
 | Agent systems + tool use | Anthropic mentions sub-agents/agent skills citeturn13view0; Databricks mentions multi-agent systems citeturn12view1 | LLM Application Engineering; Evaluation and LLMOps | Agent workflow demo; tool-use reliability tests; safety constraints and fallbacks |
 | Evaluation frameworks | Anthropic requires eval frameworks citeturn13view0; Accenture emphasizes eval for robustness/safety/fairness citeturn13view2 | Evaluation and LLMOps; Responsible AI | Evaluation harness; regression suite; red-team scenarios; monitoring dashboard |
@@ -301,7 +301,7 @@ To keep the program from drifting into academic irrelevance, partnerships should
 ### Table: measurable outcomes and metrics
 
 | Outcome | Why it matters | Example measurement approach | Target setting guidance |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Retention and progression | Indicates program’s transformational capacity amid mental-health pressures | Term-to-term retention; credit completion; SRL participation | Set improvement targets relative to institutional baseline; track subgroup equity |
 | Competency mastery | Proves degree is skills-valid, not seat-time | Competency badges; rubric + artifact review; external reviewer audits | Tie to job competency map; require capstone-level integration |
 | Portfolio quality | Hiring currency for AI product roles | Number and quality of deployed demos; documentation; eval reports | Require at least one “production-grade simulation” project |

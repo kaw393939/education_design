@@ -21,7 +21,17 @@ module.exports = {
       numberOfRuns: 1,
       startServerCommand: "npm run preview",
       startServerReadyPattern: "Preview server listening on",
-      url: ["/", "/process/", "/status/", "/tokens/"].map(buildPreviewUrl),
+      url: [
+        "/",
+        "/process/",
+        "/status/",
+        "/tokens/",
+        "/layouts/",
+        "/primitives/",
+        "/examples/module/",
+        "/examples/lesson/",
+        "/examples/reading-map/",
+      ].map(buildPreviewUrl),
     },
     assert: {
       assertions: {

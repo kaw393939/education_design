@@ -1,56 +1,49 @@
-import { EditorialLayout } from "@/components/editorial-layout";
+import { CalloutBand } from "@/components/callout-band";
+import { ContentGrid } from "@/components/content-grid";
+import { EditorialBand } from "@/components/editorial-band";
+import { PageShell } from "@/components/page-shell";
 import { SectionHeading } from "@/components/section-heading";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { SplitLayout } from "@/components/split-layout";
 import { TonePanel } from "@/components/tone-panel";
 import { completedItems, pendingItems } from "@/lib/site-content";
 
 export default function StatusPage() {
   return (
-    <EditorialLayout>
-      <SiteHeader />
-
-      <TonePanel tone="neutral" className="p-8">
+    <PageShell>
+      <EditorialBand tone="proof" paddingScale="hero">
         <SectionHeading
           eyebrow="Status"
           title="What is actually done versus what is still planned."
           body="This page reflects the same distinction the root README enforces: existing files and verified configuration count as done; planned architecture without implementation does not."
         />
-      </TonePanel>
+      </EditorialBand>
 
-      <section className="grid gap-8 lg:grid-cols-2">
-        <TonePanel tone="proof" className="p-8">
-          <SectionHeading
-            eyebrow="Completed"
-            title="Baseline pieces now present in the repository."
-            body="These items are either active documents, committed configs, or executable project infrastructure that now exists in the filesystem."
-          />
-          <ul className="mt-8 space-y-3 type-body text-[var(--ink-body)]">
-            {completedItems.map((item) => (
-              <li key={item} className="rounded-[var(--radius-card)] border border-[var(--border-proof)] bg-[color:rgba(255,255,255,0.65)] px-4 py-3">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </TonePanel>
-
-        <TonePanel tone="warning" className="p-8">
-          <SectionHeading
-            eyebrow="Still Pending"
+      <SplitLayout
+        primary={
+          <CalloutBand label="Completed" title="Baseline pieces now present in the repository." tone="proof">
+            <ContentGrid minCardWidth="14rem" className="mt-4">
+              {completedItems.map((item) => (
+                <TonePanel key={item} tone="reading" className="card-shell p-4">
+                  <p className="type-caption text-[var(--ink-body)]">{item}</p>
+                </TonePanel>
+              ))}
+            </ContentGrid>
+          </CalloutBand>
+        }
+        secondary={
+          <CalloutBand
+            label="Still Pending"
             title="The system is executable, but the educational product is not finished."
-            body="The scaffold exists to support the next real implementation work, not to fake completion. These remain active implementation targets."
-          />
-          <ul className="mt-8 space-y-3 type-body text-[var(--ink-body)]">
-            {pendingItems.map((item) => (
-              <li key={item} className="rounded-[var(--radius-card)] border border-[var(--border-warning)] bg-[color:rgba(255,255,255,0.65)] px-4 py-3">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </TonePanel>
-      </section>
-
-      <SiteFooter />
-    </EditorialLayout>
+            tone="warning"
+          >
+            <ul className="space-y-3 pl-5">
+              {pendingItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </CalloutBand>
+        }
+      />
+    </PageShell>
   );
 }

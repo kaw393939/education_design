@@ -238,4 +238,5 @@ Charts and graphs should also provide structured data or a textual summary where
 - Every versioned spec resolves to version-owned assets.
 - The system supports review and regeneration loops through drafts and immutable snapshots.
 - Accuracy-critical visuals are deterministic by default.
+
 - The site can rebuild visuals or whole experiences from explicit approved versions.

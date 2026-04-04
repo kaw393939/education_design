@@ -33,7 +33,31 @@ The current Sprint 1 implementation artifact is:
 
 This artifact is currently approved and records the evidence-backed Sprint 1 token implementation pass.
 
-Both current implementation artifacts now include evidence for root-path validation and GitHub Pages-style base-path validation.
+The current Sprint 2 planning artifact is:
+
+- `planning/sprints/sprint-2-layout-primitives.planning-qa.md`
+
+This artifact is currently approved and records the planning review for the shared shell and layout primitive layer.
+
+The current Sprint 3 planning artifact is:
+
+- `planning/sprints/sprint-3-educational-primitives.planning-qa.md`
+
+This artifact is currently approved and records the planning review for the pedagogical primitive layer and unit-to-component render contracts.
+
+The current Sprint 2 implementation artifact is:
+
+- `implementation/sprints/sprint-2-layout-primitives.implementation-qa.md`
+
+This artifact is currently approved and records the evidence-backed Sprint 2 layout implementation pass.
+
+The current Sprint 3 implementation artifact is:
+
+- `implementation/sprints/sprint-3-educational-primitives.implementation-qa.md`
+
+This artifact is currently approved and records the evidence-backed Sprint 3 pedagogical primitive and unit-renderer implementation pass.
+
+All current implementation artifacts now include evidence for root-path validation and GitHub Pages-style base-path validation.
 
 ## Naming rule
 
